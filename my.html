@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saiyu Huang | CS @ CityU</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary: #0070f3;
+            --bg: #ffffff;
+            --text: #111827;
+            --card-bg: #f9fafb;
+            --border: #e5e7eb;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            --bg: #0f172a;
+            --text: #f8fafc;
+            --card-bg: #1e293b;
+            --border: #334155;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--bg); 
+            color: var(--text); 
+            line-height: 1.6; 
+            transition: var(--transition);
+        }
+
+        /* --- Navigation --- */
+        nav { 
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            padding: 1rem 10%; display: flex; justify-content: space-between; align-items: center;
+            background: rgba(var(--bg), 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
+        }
+        .logo { font-weight: 800; font-size: 1.4rem; letter-spacing: -1px; color: var(--primary); }
+        .nav-right { display: flex; gap: 2rem; align-items: center; }
+        .nav-right a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.9rem; }
+        #theme-toggle { cursor: pointer; border: none; background: none; color: var(--text); font-size: 1.2rem; }
+
+        /* --- Hero Section --- */
+        header { padding: 10rem 10% 6rem; text-align: left; }
+        .hero-badge { 
+            display: inline-block; padding: 0.4rem 1rem; border-radius: 99px;
+            background: rgba(0, 112, 243, 0.1); color: var(--primary); font-weight: 700; font-size: 0.8rem; margin-bottom: 1.5rem;
+        }
+        h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1.1; margin-bottom: 1.5rem; }
+        .hero-desc { font-size: 1.25rem; max-width: 700px; color: #64748b; margin-bottom: 2.5rem; }
+
+        /* --- Skills Section --- */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+        .skill-category h4 { margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary); }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .tag { padding: 0.4rem 0.8rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: 6px; font-size: 0.85rem; font-family: 'JetBrains Mono', monospace; }
+
+        /* --- Project Cards --- */
+        .section-title { font-size: 2.5rem; margin-bottom: 3rem; }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
+        .project-card { 
+            background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem;
+            transition: var(--transition); position: relative; overflow: hidden;
+        }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: var(--primary); }
+        .project-card h3 { font-size: 1.5rem; margin: 1rem 0; }
+        .project-card p { font-size: 0.95rem; color: #64748b; margin-bottom: 1.5rem; }
+        .project-features { list-style: none; font-size: 0.85rem; }
+        .project-features li::before { content: "▹ "; color: var(--primary); }
+
+        /* --- Education/Awards Section --- */
+        .edu-box { display: flex; justify-content: space-between; align-items: flex-start; padding: 2rem; background: var(--card-bg); border-radius: 16px; margin-bottom: 1rem; }
+        .score-pill { background: var(--primary); color: white; padding: 0.2rem 0.8rem; border-radius: 4px; font-weight: bold; }
+
+        /* --- Footer --- */
+        footer { padding: 5rem 10%; background: var(--card-bg); border-top: 1px solid var(--border); text-align: center; }
+
+        @media (max-width: 768px) {
+            header { padding: 8rem 5% 4rem; }
+            nav { padding: 1rem 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">SAIYU HUANG </div>
+        <div class="nav-right">
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <button id="theme-toggle">🌓</button>
+        </div>
+    </nav>
+
+    <header>
+        <div class="hero-badge">Available for Summer 2026 Internships</div>
+        <h1>Building Robust<br><span style="color: var(--primary)">Software Systems.</span></h1>
+        <p class="hero-desc">Computer Science student at <b>City University of Hong Kong</b>. I specialize in Java backend architecture and mathematical modeling.</p>
+        <div class="skill-tags">
+            <span class="tag">Java</span> <span class="tag">Python</span> <span class="tag">C++</span> <span class="tag">SQL</span> <span class="tag">Git</span> 
+        </div>
+    </header>
+
+    <section id="projects" style="padding: 5rem 10%;">
+        <h2 class="section-title">Featured Work</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="skill-tags"><span class="tag">Java</span> <span class="tag">Design Patterns</span></div>
+                <h3>Corporate Leave Management System </h3>
+                <p>An enterprise-grade administrative system focused on transactional integrity and complex business logic.</p>
+                <ul class="project-features">
+                    <li>Implemented <b>Command Pattern</b> for full Undo/Redo support.</li>
+                    <li>Developed algorithms for <b>conflict detection</b> and dynamic balance reservation.</li>
+                    <li>Engineered a custom hierarchy of <b>20+ exceptions</b> for system stability.</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <div class="skill-tags"><span class="tag">HTML5/CSS3</span> <span class="tag">JS (ES6)</span></div>
+                <h3>Personal Portfolio Engine</h3>
+                <p>A high-performance, responsive web portal built to showcase technical projects and academic milestones.</p>
+                <ul class="project-features">
+                    <li><b>Dark Mode</b> implementation using CSS Variables and JS.</li>
+                    <li>Optimized for SEO and <b>Lighthouse</b> performance scores.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" style="padding: 5rem 10%; background: var(--card-bg);">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Languages</h4>
+                <div class="skill-tags">
+                    <span class="tag">Java</span> <span class="tag">Python</span> <span class="tag">C++</span> <span class="tag">SQL</span> <span class="tag">JavaScript</span> 
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>Infrastructure</h4>
+                <div class="skill-tags">
+                    <span class="tag">Linux</span> <span class="tag">Git</span> <span class="tag">VS Code</span> <span class="tag">PyCharm</span> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" style="padding: 5rem 10%;">
+        <h2 class="section-title">Education </h2>
+        <div class="edu-box">
+            <div>
+                <h3>City University of Hong Kong </h3>
+                <p>BSc in Computer Science (2024 – 2028) </p>
+            </div>
+       
+        </div>
+        <div class="edu-box">
+            <div>
+                <h3>HKDSE Mathematics </h3>
+                <p>Ranked in the top 15% nationwide </p>
+            </div>
+            <div>
+                <span class="score-pill">Level 5</span> 
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2 style="margin-bottom: 1rem;">Let's Connect</h2>
+        <p>Email: <a href="mailto:saiyhuang2-c@my.cityu.edu.hk" style="color: var(--primary); font-weight: bold;">saiyhuang2-c@my.cityu.edu.hk</a></p>
+        <p style="margin-top: 1rem;">Phone: +852 9505 8683 </p>
+        <p style="margin-top: 3rem; font-size: 0.8rem; color: #64748b;">© 2026 Saiyu Huang. Developed with JavaScript & Persistence.</p>
+    </footer>
+
+    <script>
+        // --- Theme Toggle Logic ---
+        const btn = document.getElementById("theme-toggle");
+        btn.onclick = () => {
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", newTheme);
+            btn.innerHTML = newTheme === "dark" ? "☀️" : "🌓";
+        };
+
+        // --- Intersection Observer for Fade-in ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = "0";
+            section.style.transform = "translateY(20px)";
+            section.style.transition = "all 0.8s ease-out";
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
