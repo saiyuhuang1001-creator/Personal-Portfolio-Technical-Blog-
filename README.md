@@ -44,7 +44,6 @@ The website you are currently viewing, built from scratch to showcase my technic
 
 - [cite_start]**Email:** [saiyhuang2-c@my.cityu.edu.hk](mailto:saiyhuang2-c@my.cityu.edu.hk) [cite: 2]
 
--
 
 ---
 *“Building robust systems with logic and persistence.”*
