@@ -35,16 +35,16 @@ The website you are currently viewing, built from scratch to showcase my technic
 ##  Education & Achievements
 
 - [cite_start]**University:** City University of Hong Kong (BSc in Computer Science, 2024 – 2028) 
-- [cite_start]**Mathematics:** Achieved **Level 5 in HKDSE Mathematics** (Top 15% nationwide).
-- [cite_start]**Coursework:** Computational Probability Modeling (Grade: **A-**).
+- [cite_start]**Mathematics:** Achieved **Level 5 in HKDSE Mathematics** (Top 15%).
+
 
 ---
 
 ##  Connect with Me
 
 - [cite_start]**Email:** [saiyhuang2-c@my.cityu.edu.hk](mailto:saiyhuang2-c@my.cityu.edu.hk) [cite: 2]
-- [cite_start]**Phone:** +852 9505 8683 [cite: 1]
-- **LinkedIn:** [Your LinkedIn Link Here]
+
+-
 
 ---
 *“Building robust systems with logic and persistence.”*
